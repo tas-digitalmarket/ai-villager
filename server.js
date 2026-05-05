@@ -8,7 +8,7 @@ const fs = require('fs');
 dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -224,8 +224,8 @@ Current time is: ${formatTime(gameState.timeInMinutes)}. Day: ${gameState.day}.`
     }
 });
 
-app.listen(port, () => {
-    console.log(`Game Server running at http://localhost:${port}`);
+app.listen(port, "0.0.0.0", () => {
+    console.log(`Game Server running on port ${port}`);
     console.log(`Simulated Time: 1 real second = 1 game minute`);
     askAIForSchedule(); // Get initial schedule
 });
