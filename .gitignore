@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Environment Variables (SECRET - Never upload to GitHub!)
+.env
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

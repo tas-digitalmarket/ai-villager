@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Villager 3D Persistent World</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Three.js Import Map -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+</head>
+<body>
+    <!-- 3D Container -->
+    <div id="scene-container"></div>
+
+    <!-- Camera Controls -->
+    <button id="camera-toggle" class="camera-btn">🏠 View Inside</button>
+
+    <!-- UI Overlay (HUD) -->
+    <div class="hud-container">
+        <div class="hud">
+            <h1>AI Villager</h1>
+            <div class="stats">
+                <div class="stat-box">Day: <span id="day-val">-</span></div>
+                <div class="stat-box">Time: <span id="time-val">--:--</span></div>
+                <div class="stat-box">Weather: <span id="weather-val">-</span></div>
+                <div class="stat-box energy">Energy: <span id="energy-val">100</span>%</div>
+                <div class="stat-box hunger">Hunger: <span id="hunger-val">100</span>%</div>
+            </div>
+            
+            <div class="task-info">
+                <h2>Current Task</h2>
+                <div class="task-text" id="task-text">Loading AI schedule...</div>
+                <div class="thinking-indicator" id="thinking-indicator" style="display: none;">
+                    🧠 Gemini is planning...
+                </div>
+            </div>
+
+            <div class="schedule-preview">
+                <h3>Upcoming Schedule</h3>
+                <ul id="schedule-list">
+                    <li>Loading...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Overlay -->
+    <div class="chat-container">
+        <div class="chat-header">Creator Directives</div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message ai">Greetings Creator. I am listening to your permanent instructions.</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Give a new rule... (e.g. sleep at 10 PM)">
+            <button id="chat-send">Send</button>
+        </div>
+    </div>
+
+    <!-- Loading Screen overlay -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader"></div>
+        <h2>Loading 3D Models...</h2>
+        <p>Preparing the farm.</p>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

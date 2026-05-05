@@ -1,0 +1,23 @@
+{
+  "name": "ai-villager",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["ai", "simulation", "threejs", "villager"],
+  "author": "",
+  "license": "ISC",
+  "description": "Autonomous AI Villager 3D Simulation",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "openai": "^6.36.0"
+  }
+}
