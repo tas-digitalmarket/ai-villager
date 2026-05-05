@@ -122,8 +122,9 @@ function checkLoading() {
     }
 }
 
-// 1. Load Farm
-gltfLoader.load('models/farm.glb', (gltf) => {
+// 1. Load Farm (from Google Drive CDN)
+const FARM_URL = 'https://drive.google.com/uc?export=download&id=1M0vTrZN8fpe_7XqaN1PFfwJVLlzC7H2K';
+gltfLoader.load(FARM_URL, (gltf) => {
     const farm = gltf.scene;
     const box = new THREE.Box3().setFromObject(farm);
     const size = box.getSize(new THREE.Vector3());
