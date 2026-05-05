@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Initialize OpenAI client for OpenRouter
 const openai = new OpenAI({
     baseURL: "https://openrouter.ai/api/v1",
-    apiKey: process.env.OPENROUTER_API_KEY,
+    apiKey: process.env.OPENROUTER_API_KEY || "dummy_key_to_prevent_crash_on_startup",
 });
 
 // Use Gemma 2 27B on OpenRouter
